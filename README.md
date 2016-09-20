@@ -25,7 +25,7 @@ tf apply -var-file variables.tf
 tf destroy -var-file variables.tf 
 ```
 
-### Sources
+
 
 [Terraform]: http://terraform.io
 [scenario_two]: http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html
