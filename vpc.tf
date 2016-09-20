@@ -2,7 +2,7 @@ resource "aws_vpc" "default" {
     cidr_block = "${var.vpc_cidr}"
     enable_dns_hostnames = true
     tags {
-        Name = "terraform-aws-vpc"
+        Name = "tf-aws-vpc"
     }
 }
 
@@ -70,7 +70,7 @@ resource "aws_security_group" "nat" {
     vpc_id = "${aws_vpc.default.id}"
 
     tags {
-        Name = "NATSG"
+        Name = "TERRAFORM_NATSG"
     }
 }
 
@@ -85,7 +85,7 @@ resource "aws_instance" "nat" {
     source_dest_check = false
 
     tags {
-        Name = "VPC NAT"
+        Name = "TERRAFORM_VPC_NAT"
     }
 }
 
@@ -104,7 +104,7 @@ resource "aws_subnet" "eu-west-1a-public" {
     availability_zone = "eu-west-1a"
 
     tags {
-        Name = "Public Subnet"
+        Name = "TF_Public_Subnet"
     }
 }
 
@@ -117,7 +117,7 @@ resource "aws_route_table" "eu-west-1a-public" {
     }
 
     tags {
-        Name = "Public Subnet"
+        Name = "TF_Public_Subnet"
     }
 }
 
@@ -136,7 +136,7 @@ resource "aws_subnet" "eu-west-1a-private" {
     availability_zone = "eu-west-1a"
 
     tags {
-        Name = "Private Subnet"
+        Name = "TF_Private_Subnet"
     }
 }
 
@@ -149,7 +149,7 @@ resource "aws_route_table" "eu-west-1a-private" {
     }
 
     tags {
-        Name = "Private Subnet"
+        Name = "TF_Private_Subnet"
     }
 }
 
