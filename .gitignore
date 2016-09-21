@@ -3,5 +3,6 @@
 *.tfstate
 *.tfstate.backup
 *.backup
+*.txt
 tfkey
 tfkey.pub
