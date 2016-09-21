@@ -40,23 +40,23 @@ resource "aws_security_group" "web" {
     vpc_id = "${aws_vpc.default.id}"
 
     tags {
-        Name = "WebServerSG"
+        Name = "TERRAFORM_WebServer_SG"
     }
 }
 
 resource "aws_instance" "web-1" {
     ami = "${lookup(var.amis, var.aws_region)}"
-    availability_zone = "eu-west-1a"
+    availability_zone = "us-east-1a"
     instance_type = "m1.small"
     key_name = "${var.aws_key_name}"
     security_groups = ["${aws_security_group.web.id}"]
-    subnet_id = "${aws_subnet.eu-west-1a-public.id}"
+    subnet_id = "${aws_subnet.us-east-1a-public.id}"
     associate_public_ip_address = true
     source_dest_check = false
 
 
     tags {
-        Name = "Web Server 1"
+        Name = "TERRAFORM_Web_Server_1"
     }
 }
 

@@ -5,13 +5,13 @@ variable "aws_key_name" {}
 
 variable "aws_region" {
     description = "EC2 Region for the VPC"
-    default = "eu-west-1"
+    default = "us-east-1"
 }
 
 variable "amis" {
     description = "AMIs by region"
     default = {
-        eu-west-1 = "ami-f1810f86" # ubuntu 14.04 LTS
+        us-east-1  = "ami-b227efda" # ubuntu 14.04 LTS
     }
 }
 
